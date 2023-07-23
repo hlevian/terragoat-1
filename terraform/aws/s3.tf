@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "data" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-data"
+  bucket        = "${local.resource_prefix.value}-data-1"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-data"
@@ -43,7 +43,7 @@ resource "aws_s3_bucket" "financials" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-financials"
+  bucket        = "${local.resource_prefix.value}-financials-1"
   acl           = "private"
   force_destroy = true
   tags = merge({
@@ -72,7 +72,7 @@ resource "aws_s3_bucket" "operations" {
   }
   force_destroy = true
   tags = merge({
-    Name        = "${local.resource_prefix.value}-operations"
+    Name        = "${local.resource_prefix.value}-operations-1"
     Environment = local.resource_prefix.value
     }, {
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
