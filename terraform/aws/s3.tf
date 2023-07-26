@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "data" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-data"
+  bucket        = "${local.resource_prefix.value}-data-1"
   force_destroy = true
   tags = merge({
     Name        = "${local.resource_prefix.value}-data"
@@ -43,7 +43,7 @@ resource "aws_s3_bucket" "financials" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-financials"
+  bucket        = "${local.resource_prefix.value}-financials-1"
   acl           = "private"
   force_destroy = true
   tags = merge({
@@ -65,7 +65,7 @@ resource "aws_s3_bucket" "financials" {
 resource "aws_s3_bucket" "operations" {
   # bucket is not encrypted
   # bucket does not have access logs
-  bucket = "${local.resource_prefix.value}-operations"
+  bucket = "${local.resource_prefix.value}-operations-1"
   acl    = "private"
   versioning {
     enabled = true
@@ -88,7 +88,7 @@ resource "aws_s3_bucket" "operations" {
 
 resource "aws_s3_bucket" "data_science" {
   # bucket is not encrypted
-  bucket = "${local.resource_prefix.value}-data-science"
+  bucket = "${local.resource_prefix.value}-data-science-1"
   acl    = "private"
   versioning {
     enabled = true
